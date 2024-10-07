@@ -1,0 +1,101 @@
+{
+  "auth": {
+    "myfilebackpackuid5f5ff6f": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_allowUnauthenticatedIdentities": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_authRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_authRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_identityPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    },
+    "AMPLIFY_auth_myfilebackpackuid5f5ff6f_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "myfilebackpackuid5f5ff6f"
+        }
+      ]
+    }
+  }
+}

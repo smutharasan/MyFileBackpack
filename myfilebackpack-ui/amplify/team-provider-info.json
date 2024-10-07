@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myfilebackpackui-dev-1743e-authRole",
+      "UnauthRoleArn": "arn:aws:iam::832938264121:role/amplify-myfilebackpackui-dev-1743e-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::832938264121:role/amplify-myfilebackpackui-dev-1743e-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-myfilebackpackui-dev-1743e-deployment",
+      "UnauthRoleName": "amplify-myfilebackpackui-dev-1743e-unauthRole",
+      "StackName": "amplify-myfilebackpackui-dev-1743e",
+      "StackId": "arn:aws:cloudformation:us-east-1:832938264121:stack/amplify-myfilebackpackui-dev-1743e/1edc1c10-84ea-11ef-a0e4-0affead87575",
+      "AmplifyAppId": "dqrp5t3jofrzx"
+    },
+    "categories": {
+      "auth": {
+        "myfilebackpackuid5f5ff6f": {
+          "userPoolId": "us-east-1_j8XAdh3OP",
+          "userPoolName": "myfilebackpackui9a14140e_userpool_9a14140e-dev",
+          "webClientId": "7cppaddje43r7uvtr2purepir9",
+          "nativeClientId": "7cppaddje43r7uvtr2purepir9",
+          "identityPoolId": "us-east-1:482c8dd7-243d-45f7-bde1-4672260e8a92",
+          "identityPoolName": "myfilebackpackui9a14140e_identitypool_9a14140e__dev",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::832938264121:role/amplify-myfilebackpackui-dev-160611-authRole",
+          "authRoleName": "amplify-myfilebackpackui-dev-160611-authRole",
+          "unauthRoleArn": "arn:aws:iam::832938264121:role/amplify-myfilebackpackui-dev-160611-unauthRole",
+          "unauthRoleName": "amplify-myfilebackpackui-dev-160611-unauthRole"
+        }
+      }
+    }
+  }
+}
