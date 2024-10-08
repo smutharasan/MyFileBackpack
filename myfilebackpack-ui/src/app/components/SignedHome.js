@@ -1,34 +1,80 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
+
 import Image from "next/image";
+
 import { fetchAuthSession } from "aws-amplify/auth";
 
-/**
- *  <Authenticator>
-      {({ signOut, user }) => (
-        <main>
-          <h1>Hello {user.username}</h1>
-          <button onClick={signOut}>Sign out</button>
-        </main>
-      )}
-    </Authenticator>
-              <button onClick={signOut}>Sign out</button>
+export async function getMyFileBackpackFiles(givenUser) {
+  // initializing the api URL
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
- */
+  try {
+    const res = await fetch(`${apiUrl}/v1/myfilebackpack`, {
+      // Generate headers with the proper Authorization bearer token to pass
+      headers: givenUser.authorizationHeaders(),
+    });
+    if (!res.ok) {
+      throw new Error(`${res.status} ${res.statusText}`);
+    }
+    const myFileBackpackFilesData = await res.json();
+
+    // Pass data to the page via props
+    return { ...myFileBackpackFilesData };
+  } catch (err) {
+    console.error("Unable to call GET /v1/myfilebackpack", { err });
+  }
+}
+
 async function currentSession() {
   try {
     const { accessToken, idToken } = (await fetchAuthSession()).tokens ?? {};
     return { accessToken, idToken };
   } catch (err) {
-    console.log(err);
+    console.log("Unable to fetch access token and id token", err);
   }
 }
 
 function SignedHome({ signOut, user }) {
-  console.log(user);
-  currentSession()
-    .then((session) => console.log(session))
-    .catch((err) => console.log(err));
-  
+  const [myFileBackpackFiles, setMyFileBackpackFiles] = useState(null);
+
+  useEffect(() => {
+    let mounted = true;
+
+    currentSession()
+      .then(({ idToken, accessToken }) => {
+        // fetch the idToken and accessToken
+        console.log("Access Token: ", accessToken);
+        console.log("Id Token: ", idToken);
+        return {
+          // return the idToken , accessToken, and a function to generate headers
+          idToken,
+          accessToken,
+          // Include a simple method to generate headers with our Authorization info
+          authorizationHeaders: (type = "application/json") => {
+            const headers = { "Content-Type": type };
+            headers["Authorization"] = `Bearer ${idToken}`;
+            return headers;
+          },
+        };
+      }) // append the username to the user object
+      .then((simplifiedUser) => ({
+        ...simplifiedUser,
+        username: user.username,
+      })) // call the getMyFileBackpackFiles function
+      .then((simplifiedUser) => getMyFileBackpackFiles(simplifiedUser))
+      .then((givenFileBackpackFiles) => {
+        if (mounted) {
+          console.log("About the data: , ", givenFileBackpackFiles);
+          return setMyFileBackpackFiles({ ...givenFileBackpackFiles });
+        }
+      }) // catch any errors
+      .catch((err) => {
+        console.error("Unable to fetch the user's backpack files", err);
+      });
+    return () => (mounted = false);
+  }, []);
+
   return (
     <div
       style={{

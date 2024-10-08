@@ -5,7 +5,7 @@ const nextConfig = {
       process.env.NEXT_PUBLIC_AWS_IDENTITY_POOL_ID,
     NEXT_PUBLIC_API_URL:
       process.env.NEXT_PUBLIC_API_URL ||
-      "http://fragments-env.eba-shywj3p2.us-east-1.elasticbeanstalk.com",
+      "http://myfilebackpack-env.eba-shywj3p2.us-east-1.elasticbeanstalk.com",
     NEXT_PUBLIC_AWS_COGNITO_POOL_ID:
       process.env.NEXT_PUBLIC_AWS_COGNITO_POOL_ID,
     NEXT_PUBLIC_AWS_COGNITO_CLIENT_ID:
