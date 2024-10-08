@@ -22,12 +22,6 @@ jobs:
     runs-on: ubuntu-latest
     # We run these steps one after the other, and if any fail, we stop the process
     steps:
-      # move to the backend folder
-      - uses: actions/checkout@v3
-      - run: cd myfilebackpack-server
-
-      # https://github.com/actions/checkout
-      
       # https://github.com/actions/setup-node
       - name: Setup node
         uses: actions/setup-node@v3
@@ -40,6 +34,8 @@ jobs:
       - name: Install node dependencies
         # use 'ci' vs. 'install' - https://docs.npmjs.com/cli/v8/commands/npm-ci
         run: npm ci
+        working-directory: ./myfilebackpack-server
 
       - name: Run ESLint
         run: npm run lint
+        working-directory: ./myfilebackpack-server
