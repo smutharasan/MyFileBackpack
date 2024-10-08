@@ -20,6 +20,9 @@ jobs:
     name: ESLint
     # We'll run this on a Linux (Ubuntu) VM, since we'll deploy on Linux too.
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'myfilebackpack-server' # 
     # We run these steps one after the other, and if any fail, we stop the process
     steps:
 
@@ -36,13 +39,10 @@ jobs:
           # cache npm dependencies, so they don't have to be downloaded next time - https://github.com/actions/setup-node#caching-packages-dependencies
           cache: "npm"
           cache-dependency-path: '**/package-lock.json'
-          working-directory: ./myfilebackpack-server
-
+          
       - name: Install node dependencies
         # use 'ci' vs. 'install' - https://docs.npmjs.com/cli/v8/commands/npm-ci
         run: npm ci
-        working-directory: ./myfilebackpack-server
-
+        
       - name: Run ESLint
         run: npm run lint
-        working-directory: ./myfilebackpack-server
