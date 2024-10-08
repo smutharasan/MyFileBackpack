@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
-
+import { Authenticator } from "@aws-amplify/ui-react";
+import { Amplify } from "aws-amplify";
+import outputs from "../amplifyconfiguration.json";
+import "@aws-amplify/ui-react/styles.css";
+Amplify.configure({ ...outputs, ssr: true });
 
 import UnsignedHome from "@/components/UnsignedHome";
 import SignedHome from "@/components/SignedHome";
@@ -17,7 +21,11 @@ export default function Home() {
             setClickLoggedIn={setClickLoggedIn}
           />
         ) : (
-          <SignedHome />
+          <Authenticator>
+            {({ signOut, user }) => (
+              <SignedHome signOut={signOut} user={user} />
+            )}
+          </Authenticator>
         )}
       </div>
     </>
