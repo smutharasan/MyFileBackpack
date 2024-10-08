@@ -36,6 +36,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
       - name: list out the files
         run: ls -al
       - name: Install node dependencies
