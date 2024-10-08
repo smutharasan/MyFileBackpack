@@ -39,7 +39,7 @@ jobs:
 
       - name: Install node dependencies
         # use 'ci' vs. 'install' - https://docs.npmjs.com/cli/v8/commands/npm-ci
-        run: npm ci
+        run: npm i
         working-directory: ./myfilebackpack-server
 
       - name: Run ESLint
