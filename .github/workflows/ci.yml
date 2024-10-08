@@ -22,6 +22,11 @@ jobs:
     runs-on: ubuntu-latest
     # We run these steps one after the other, and if any fail, we stop the process
     steps:
+
+     # https://github.com/actions/checkout
+      - name: Check out code
+        uses: actions/checkout@v3
+        
       # https://github.com/actions/setup-node
       - name: Setup node
         uses: actions/setup-node@v3
