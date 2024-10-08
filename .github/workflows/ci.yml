@@ -32,9 +32,9 @@ jobs:
 
       # https://github.com/actions/setup-node
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
           cache: 'npm'
           cache-dependency-path: 'package-lock.json'
       - name: list out the files
