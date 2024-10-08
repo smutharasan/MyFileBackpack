@@ -24,7 +24,7 @@ jobs:
     steps:
       # move to the backend folder
       - uses: actions/checkout@v3
-      - run: mv -f myfilebackpack-server/* .
+      - run: cd myfilebackpack-server
 
       # https://github.com/actions/checkout
       
